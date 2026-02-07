@@ -5,9 +5,66 @@
   color: #fff;
 }
 
-body {
-  margin: 0;
-  background: #121212;
+* { box-sizing: border-box; }
+body { margin: 0; background: #0f1115; color: #fff; }
+
+.page { min-height: 100vh; background: radial-gradient(1200px 600px at 10% -10%, #2a1a0b, #0f1115 60%); }
+.container { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(15,17,21,0.7); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.brand { display: flex; gap: 12px; align-items: center; }
+.brand-badge { width: 40px; height: 40px; border-radius: 12px; background: #ee9d2b; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.brand-title { font-weight: 800; }
+.brand-sub { font-size: 12px; opacity: 0.7; }
+
+.hero h1 { font-size: 36px; margin: 0 0 8px; }
+.hero p { margin: 0; color: #b9c0cc; }
+
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px; margin: 18px 0; }
+.card-title { font-weight: 700; margin-bottom: 12px; }
+
+.upload-zone { border: 2px dashed rgba(238,157,43,0.4); border-radius: 16px; padding: 24px; text-align: center; background: rgba(238,157,43,0.08); cursor: pointer; }
+.upload-icon { font-size: 28px; }
+.upload-title { font-weight: 700; margin-top: 6px; }
+.upload-desc { font-size: 12px; opacity: 0.7; margin: 6px 0 12px; }
+.preview-wrap img { width: 140px; height: 140px; object-fit: cover; border-radius: 18px; border: 2px solid rgba(238,157,43,0.4); }
+.hint { margin-top: 8px; color: #ee9d2b; font-weight: 600; }
+
+.textarea { width: 100%; min-height: 120px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: #fff; border-radius: 12px; padding: 14px; outline: none; }
+
+.option-group { display: grid; gap: 16px; }
+.label { font-size: 13px; margin-bottom: 8px; opacity: 0.8; }
+.chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); color: #fff; cursor: pointer; }
+.chip.active { background: #ee9d2b; border-color: #ee9d2b; color: #0f1115; font-weight: 700; }
+
+.primary-btn { background: #ee9d2b; color: #0f1115; border: none; padding: 12px 18px; border-radius: 999px; font-weight: 800; cursor: pointer; }
+.primary-btn.wide { width: 100%; }
+.ghost-btn { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 10px 14px; border-radius: 999px; cursor: pointer; }
+
+.cta { margin-top: 12px; }
+.error-text { color: #ff7b7b; margin-top: 10px; }
+
+/* Results */
+.results { background: #0f1115; }
+.results-topbar { padding: 16px 24px; }
+.results-content { max-width: 960px; margin: 0 auto; padding: 0 24px 120px; }
+.hero-image { width: 100%; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); margin-top: 10px; }
+.hero-image img { width: 100%; display: block; }
+.results-header { margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
+.results-header h1 { margin: 0; font-size: 32px; }
+.pill-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+.frame-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.frame-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; }
+.frame-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.frame-text { padding: 10px; font-size: 12px; color: #c9d0da; }
+.results-actions { position: sticky; bottom: 0; background: linear-gradient(to top, #0f1115 60%, rgba(15,17,21,0)); padding: 16px 24px 24px; display: grid; gap: 10px; }
+
+@media (max-width: 720px) {
+  .frame-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-button { border: none; }
+@media (max-width: 520px) {
+  .frame-grid { grid-template-columns: 1fr; }
+}
